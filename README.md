@@ -22,7 +22,6 @@ In this work, we present a novel mask guided attention (MGA) method for fine-gra
 
 <img src='architecture.png' width='1280' height='350'>
 
-## Few-shot classification Results
 
 ## Prerequisites
 
