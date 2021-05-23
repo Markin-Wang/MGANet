@@ -27,8 +27,9 @@ In this work, we present a novel mask guided attention (MGA) method for fine-gra
 ## Prerequisites
 
 The following packages are required to run the scripts:
-
-- [PyTorch >= version 1.1](https://pytorch.org)
+- [Python >= 3.6]
+- [PyTorch >= 1.0]
+- [Torchvision]
 
 ## Dataset
 The dataset will be released after we complete the code refactoring.
@@ -63,7 +64,7 @@ Test DeepEMD-FCN with a trained model for 5-shot 5-way task on the miniImageNet 
 
 ## Acknowledgment
 Our project references the codes in the following repos.
-- [FEAT](https://github.com/Sha-Lab/FEAT)
+- [pytorch-cifar](https://github.com/kuangliu/pytorch-cifar)
 
 
 
