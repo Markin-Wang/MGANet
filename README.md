@@ -55,7 +55,7 @@ Test the model on the Soybean dataset:
 
 
 ## Acknowledgment
-Thanks for the advice and guidance given by Dr.Xiaohan Yu andn Prof. Yongsheng Gao.
+Thanks for the advice and guidance given by Dr.Xiaohan Yu and Prof. Yongsheng Gao.
 
 Our project references the codes in the following repos.
 - [pytorch-cifar](https://github.com/kuangliu/pytorch-cifar)
