@@ -4,39 +4,21 @@ PyTorch implementation of
 
 [MASK GUIDED ATTENTION FOR FINE-GRAINED PATCHY IMAGE CLASSIFICATION](https://https://arxiv.org/pdf/2102.02771.pdf)" ( ICIP 2021 ) 
 
-and
-
-"[DeepEMD v2: Differentiable Earth Mover's Distance for Few-Shot Learning](https://arxiv.org/pdf/2003.06777.pdf)" (Extension). 
-
-**DeepEMD achieves new state-of-the-art performance on five few-shot learning benchmarks with significant advantages (up to 7%). The result is obtained without using any extra data for training or testing (tranductive setting).**
-
-Check [few-shot classification leaderboard](https://few-shot.yyliu.net/miniimagenet.html).
-
 If you use the code in this repo for your work, please cite the following bib entries:
 
-    @InProceedings{Zhang_2020_CVPR,
-    author = {Zhang, Chi and Cai, Yujun and Lin, Guosheng and Shen, Chunhua},
-    title = {DeepEMD: Few-Shot Image Classification With Differentiable Earth Mover's Distance and Structured Classifiers},
-    booktitle = {IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
-    month = {June},
-    year = {2020}
-    }
-and
-
-    @misc{zhang2020deepemdv2,
-        title={DeepEMD: Differentiable Earth Mover's Distance for Few-Shot Learning},
-        author={Chi Zhang and Yujun Cai and Guosheng Lin and Chunhua Shen},
-        year={2020},
+    @article{wang2021mask,
+        title={Mask guided attention for fine-grained patchy image classification},
+        author={Wang, Jun and Yu, Xiaohan and Gao, Yongsheng},
+        journal={arXiv preprint arXiv:2102.02771},
         eprint={2003.06777v3},
         archivePrefix={arXiv},
         primaryClass={cs.CV}
     }
 
-If you have any question regarding the paper, please send a email to `chi007[at]e[dot]ntu[dot]edu[dot]sg`.
 
 ## Abstract
 
-Deep learning has proved to be very effective in learning with a large amount of labelled data. Few-shot learning in contrast attempts to learn with only a few labelled data. In this work, we develop methods for few-shot image classification from a new perspective of optimal matching between image regions. We employ the Earth Mover's Distance (EMD) as a metric to compute a structural distance between dense image representations to determine image relevance. The EMD generates the optimal matching flows between structural elements that have the minimum matching cost, which is used to calculate the image distance for classification. To generate the important weights of elements in the EMD formulation, we design a cross-reference mechanism, which can effectively alleviate the adverse impact caused by the cluttered background and large intra-class appearance variations. To handle k-shot classification, we propose to learn a structured fully connected layer that can directly classify dense image representations with the proposed EMD. Based on the implicit function theorem, the EMD can be inserted as a layer into the network for end-to-end training. Our extensive experiments validate the effectiveness of our algorithm which outperforms state-of-the-art methods by a significant margin on four widely used few-shot classification benchmarks, namely, miniImageNet, tieredImageNet, Fewshot-CIFAR100 (FC100) and Caltech-UCSD Birds-200-2011 (CUB).
+In this work, we present a novel mask guided attention (MGA) method for fine-grained patchy image classification. The key chal- lenge of fine-grained patchy image classification lies in two folds, ultra-fine-grained inter-category variances among objects and very few data available for training. This motivates us to consider em- ploying more useful supervision signal to train a discriminative model within limited training samples. Specifically, the proposed MGA integrates a pre-trained semantic segmentation model that produces auxiliary supervision signal, i.e., patchy attention mask, enabling a discriminative representation learning. The patchy at- tention mask drives the classifier to filter out the insignificant parts of images (e.g., common features between different categories), which enhances the robustness of MGA for the fine-grained patchy image classification. We verify the effectiveness of our method on three publicly available patchy image datasets. Experimental results demonstrate that our MGA method achieves superior performance on three datasets compared with the state-of-the-art methods. In addition, our ablation study shows that MGA improves the accuracy by 2.25% and 2% on the SoyCultivarVein and BtfPIS datasets, indi- cating its practicality towards solving the fine-grained patchy image classification.
 
 <img src='architecture.png' width='1280' height='520'>
 
