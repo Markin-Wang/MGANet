@@ -48,9 +48,6 @@ Test DeepEMD-FCN with a trained model for 1-shot 5-way task on the miniImageNet 
 
     $ python eval.py  -deepemd fcn -gpu 0,1,2,3
     
-Test DeepEMD-FCN with a trained model for 5-shot 5-way task on the miniImageNet dataset:
-
-    $ python eval.py  -deepemd fcn -shot 5 -test_episode 600 -gpu 0,1,2,3
         
             
 ## Download  Models
