@@ -2,7 +2,7 @@
 
 PyTorch implementation of 
 
-[MASK GUIDED ATTENTION FOR FINE-GRAINED PATCHY IMAGE CLASSIFICATION](https://https://arxiv.org/pdf/2102.02771.pdf)" (ICIP 2021 ) 
+[MASK GUIDED ATTENTION FOR FINE-GRAINED PATCHY IMAGE CLASSIFICATION](https://https://arxiv.org/pdf/2102.02771.pdf)" ( ICIP 2021 ) 
 
 and
 
