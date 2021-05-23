@@ -34,31 +34,29 @@ The following packages are required to run the scripts:
 The dataset will be released after we complete the code refactoring.
 
 
-## Training scripts for MGANet with the backbone network Densenet161 on SoyBean dataset.
-Pre-train the models on the miniImagenet
+## Training scripts for MGANet with the backbone network Densenet161.
+Train the model on the Soybean dataset
 
-    $ python train_pretrain.py -dataset miniimagenet -gpu 0,1,2,3
-
-
-## Testing scripts for MGANet with the backbone network Densenet161 on SoyBean dataset.
+    $ python train.py -dataset soybean -lr 0.05 -backbone_class densenet161
 
 
-Test DeepEMD-FCN with a trained model for 1-shot 5-way task on the miniImageNet dataset:
+## Testing scripts for MGANet with the backbone network Densenet161.
+Test the model on the Soybean dataset:
 
-    $ python eval.py  -deepemd fcn -gpu 0,1,2,3
+    $ python test.py  -dataset soybean -backbone_class densenet161
     
         
             
 ## Download  Models
 
 
-[Pre-trained Models](https://drive.google.com/file/d/1Prn7_41NVrZbnePAlSiKjD21Jlz0LKJM/view?usp=sharing)
+[Trained model](https://drive.google.com/file/d/1Prn7_41NVrZbnePAlSiKjD21Jlz0LKJM/view?usp=sharing)
 (or run `bash download_pretrain_model.sh`)
 
-[Meta-trained Models](https://drive.google.com/file/d/1lGcNHMRnBrjODDmt647RzMJ5cLCd4pmv/view?usp=sharing)
-(or run `bash download_trained_model.sh`)
 
 ## Acknowledgment
+Thanks for the advice and guidance given by Dr.Xiaohan Yu andn Prof. Yongsheng Gao.
+
 Our project references the codes in the following repos.
 - [pytorch-cifar](https://github.com/kuangliu/pytorch-cifar)
 
