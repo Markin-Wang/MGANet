@@ -2,7 +2,7 @@
 
 PyTorch implementation of 
 
-[DeepEMD: Few-Shot Image Classification with Differentiable Earth Mover's Distance and Structured Classifiers](https://arxiv.org/pdf/2003.06777v2.pdf)" (CVPR 2020 oral [(oral video)](https://www.youtube.com/watch?v=X2ZUZYy_GtY) ) 
+[MASK GUIDED ATTENTION FOR FINE-GRAINED PATCHY IMAGE CLASSIFICATION](https://https://arxiv.org/pdf/2102.02771.pdf)" (ICIP 2021 ) 
 
 and
 
