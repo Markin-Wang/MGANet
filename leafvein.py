@@ -11,8 +11,7 @@ import torchvision.transforms.functional as F
 class Leafvein(Dataset):
     
     def __init__(self,
-                 data_dir: str,
-                 dataset='soybean',
+                 args,
                  crop=None,
                  hflip=None,
                  vflip=None,
@@ -25,12 +24,12 @@ class Leafvein(Dataset):
         @ transforms:  image transformation; by default no transformation
         @ sample_n:    if not None, only use that many observations
         """
-        self.data_dir = data_dir
+        self.data_dir = args.data_dir
         with open(os.path.join(self.data_dir,'labels.pkl'),'rb') as df:
             self.label=pickle.load(df)
         #self.transform = transform
         self.mode=mode
-        self.dataset=dataset
+        self.dataset=args.dataset
         self.img_files=os.listdir(os.path.join(self.data_dir,self.mode))
         self.crop=crop
         self.hflip=hflip
