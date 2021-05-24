@@ -12,6 +12,7 @@ class Leafvein(Dataset):
     
     def __init__(self,
                  data_dir: str,
+                 dataset=soybean,
                  crop=None,
                  hflip=None,
                  vflip=None,
@@ -29,6 +30,7 @@ class Leafvein(Dataset):
             self.label=pickle.load(df)
         #self.transform = transform
         self.mode=mode
+        self.dataset=dataset
         self.img_files=os.listdir(os.path.join(self.data_dir,self.mode))
         self.crop=crop
         self.hflip=hflip
@@ -62,8 +64,10 @@ class Leafvein(Dataset):
         file_name = self.img_files[idx]
         id_=(file_name.split('.')[0])
         img = PIL.Image.open(os.path.join(self.data_dir, self.mode,file_name)).convert('RGB')
-        #mask = PIL.Image.open(os.path.join(self.data_dir,'l2_mask',id_+'.png')) # for soybean and hainan leaf dataset
-        mask = PIL.Image.open(os.path.join(self.data_dir,'l2_mask',file_name)) # for btf dataset
+        if self.dataset=='soybean':
+            mask = PIL.Image.open(os.path.join(self.data_dir,'l2_mask',id_+'.png')) # for soybean and hainan leaf dataset
+        else:
+            mask = PIL.Image.open(os.path.join(self.data_dir,'l2_mask',file_name)) # for btf dataset
         if self.hflip:
             if random.random() < 0.5:
                 img = img.transpose(PIL.Image.FLIP_LEFT_RIGHT)

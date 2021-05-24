@@ -73,9 +73,9 @@ model_name=args.backbone_class
 '''
 
 
-train = Leafvein(train_dir,crop=[224,224],hflip=True,vflip=False,erase=True,mode='train')
+train = Leafvein(train_dir,dataset=dataset,crop=[224,224],hflip=True,vflip=False,erase=True,mode='train')
 
-test = Leafvein(test_dir,mode='test')
+test = Leafvein(test_dir,dataset=dataset,mode='test')
 
 trainloader = DataLoader(train, batch_size=batchsize, shuffle=True, num_workers=8)
 testloader = DataLoader(test, batch_size=1, shuffle=False, num_workers=8)
