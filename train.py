@@ -19,7 +19,7 @@ from utils import progress_bar
 from leafvein import Leafvein
 
 ## reproducility
-seed=21
+seed=213
 np.random.seed(seed)
 random.seed(seed)
 torch.manual_seed(seed)
@@ -46,6 +46,10 @@ parser.add_argument('--dataset', type=str,default='soybean',choice=['soybean','b
                     help='resume from checkpoint')
 parser.add_argument('--data_dir', type=str,default='./data',choice=['soybean','btf','hainan_leaf']
                     help='resume from checkpoint')
+parser.add_argument('--num_classes', default=200,type=int,
+                    help='num class')
+parser.add_argument('--batch_size', default=32,type=int,
+                    help='8 samples for 1 gpu')
 
 args = parser.parse_args()
 
@@ -60,8 +64,8 @@ print('==> Preparing data..')
 train_dir = os.path.join(args.data_dir,dataset)
 test_dir = os.path.join(args.data_dir,dataset)
 
-batchsize = 32
-num_classes=10
+batchsize = args.batch_size
+num_classes=args.num_classes
 att_type= 'two'
 mask_guided=True
 model_name=args.backbone_class
