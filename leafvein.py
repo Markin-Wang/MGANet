@@ -30,7 +30,7 @@ class Leafvein(Dataset):
         self.dataset=args.dataset
         with open(os.path.join(self.data_dir,self.dataset,'labels.pkl'),'rb') as df:
             self.label=pickle.load(df)
-        self.img_files=os.listdir(os.path.join(self.data_dir,self.mode))
+        self.img_files=os.listdir(os.path.join(self.data_dir, self.dataset, self.mode))
         self.crop=crop
         self.hflip=hflip
         self.vflip=vflip
