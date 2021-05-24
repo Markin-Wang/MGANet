@@ -50,8 +50,8 @@ Test the model on the Soybean dataset:
 ## Download  Models
 
 
-[Trained model](https://drive.google.com/file/d/1Prn7_41NVrZbnePAlSiKjD21Jlz0LKJM/view?usp=sharing)
-(or run `bash download_pretrain_model.sh`)
+[Trained model Google Drive](https://drive.google.com/drive/folders/1ZoG0yOyOaLd3Fgv4ImvNxATeO3pek3VG?usp=sharing)
+
 
 
 ## Acknowledgment
