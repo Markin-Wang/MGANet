@@ -39,7 +39,7 @@ parser.add_argument('--resume', '-r', action='store_true',
                     help='resume from checkpoint')
 parser.add_argument('--max_epoch', default=150,type=int,
                     help='resume from checkpoint')
-parser.add_argument('--backbone_class', type=str,default='densenet161',choice=['densenet161','vgg19','resnet50',
+parser.add_argument('--backbone_class', type=str,default='densenet161',choices=['densenet161','vgg19','resnet50',
                                                                                'mobilenet_v2','inception_v3'],
                     help='resume from checkpoint')
 parser.add_argument('--dataset', type=str,default='soybean',choice=['soybean','btf','hainan_leaf'],
