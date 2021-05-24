@@ -12,7 +12,7 @@ class Leafvein(Dataset):
     
     def __init__(self,
                  data_dir: str,
-                 dataset=soybean,
+                 dataset='soybean',
                  crop=None,
                  hflip=None,
                  vflip=None,
