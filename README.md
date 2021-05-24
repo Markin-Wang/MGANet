@@ -37,13 +37,13 @@ The dataset will be released after we complete the code refactoring.
 ## Training scripts for MGANet with the backbone network Densenet161.
 Train the model on the Soybean dataset
 
-    $ python train.py -dataset soybean -lr 0.05 -backbone_class densenet161
+    $ python train.py --dataset soybean --lr 0.05 --backbone_class densenet161
 
 
 ## Testing scripts for MGANet with the backbone network Densenet161.
 Test the model on the Soybean dataset:
 
-    $ python test.py  -dataset soybean -backbone_class densenet161
+    $ python test.py  --dataset soybean --backbone_class densenet161
     
         
             
