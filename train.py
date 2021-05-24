@@ -42,9 +42,9 @@ parser.add_argument('--max_epoch', default=150,type=int,
 parser.add_argument('--backbone_class', type=str,default='densenet161',choice=['densenet161','vgg19','resnet50',
                                                                                'mobilenet_v2','inception_v3'],
                     help='resume from checkpoint')
-parser.add_argument('--dataset', type=str,default='soybean',choice=['soybean','btf','hainan_leaf']
+parser.add_argument('--dataset', type=str,default='soybean',choice=['soybean','btf','hainan_leaf'],
                     help='resume from checkpoint')
-parser.add_argument('--data_dir', type=str,default='./data',choice=['soybean','btf','hainan_leaf']
+parser.add_argument('--data_dir', type=str,default='./data',choice=['soybean','btf','hainan_leaf'],
                     help='resume from checkpoint')
 parser.add_argument('--num_classes', default=200,type=int,
                     help='num class')
