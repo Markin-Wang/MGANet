@@ -33,12 +33,19 @@ test_ce_losses=[]
 train_mse_losses=[]
 test_mse_losses=[]
 
-parser = argparse.ArgumentParser(description='PyTorch CIFAR10 Training')
-parser.add_argument('--lr', default=0.1, type=float, help='learning rate')
+parser = argparse.ArgumentParser(description='PyTorch Testing')
+parser.add_argument('--lr', default=0.05, type=float, help='learning rate')
 parser.add_argument('--resume', '-r', action='store_true',
                     help='resume from checkpoint')
 parser.add_argument('--max_epoch', default=150,type=int,
                     help='resume from checkpoint')
+parser.add_argument('--backbone_class', type=str,default='densenet161',choices=['densenet161','vgg19','resnet50',
+                                                                               'mobilenet_v2','inception_v3'])
+parser.add_argument('--dataset', type=str,default='soybean',choices=['soybean','btf','hainan_leaf'])
+parser.add_argument('--data_dir', type=str,default='./data')
+parser.add_argument('--checkpoint_path', type=str,default='./checkpoint/ckpt.pth')
+parser.add_argument('--num_classes', default=200, type=int, help='num class')
+parser.add_argument('--batch_size', default=32, type=int, help='8 samples for 1 gpu')
 args = parser.parse_args()
 
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
@@ -49,23 +56,12 @@ start_epoch = 0  # start from epoch 0 or last checkpoint epoch
 # Data
 print('==> Preparing data..')
 
-train_dir = '/home/ubuntu/junwang/paper/ICIP/Leaf_Classification/data/soy_bean'
-test_dir = '/home/ubuntu/junwang/paper/ICIP/Leaf_Classification/data/soy_bean'
-'''
-train_dir = '/home/deep/junwang/ICIP2020/classification/data'
-test_dir = '/home/deep/junwang/ICIP2020/classification/data'
-'''
-batchsize = 32
-num_classes=200
+num_classes=args.num_classes
 att_type='two'
-mask_guided=False
-'''
-    transforms.Normalize(mean=[0.616, 0.638, 0.589],
-                         std=[0.430, 0.406, 0.461])
-'''
+mask_guided=True
+model_name=args.backbone_class
 
-
-test = Leafvein(test_dir,mode='test')
+test = Leafvein(args,mode='test')
 
 testloader = DataLoader(test, batch_size=1, shuffle=False, num_workers=8)
 
@@ -73,25 +69,12 @@ testloader = DataLoader(test, batch_size=1, shuffle=False, num_workers=8)
 # Model
 print('==> Building model..')
 
-
-'''
-#for vgg16
-model.classifier=nn.Sequential(
-    nn.Linear(in_features=num_ftrs, out_features=4096, bias=True),
-    nn.ReLU(inplace=True),
-    nn.Dropout(p=0.5, inplace=False),
-    nn.Linear(in_features=4096, out_features=4096, bias=True),
-    nn.ReLU(inplace=True),
-    nn.Dropout(p=0.5, inplace=False),
-    nn.Linear(in_features=4096, out_features=200, bias=True)
-)
-'''
-model=MGANET(backbone_name='resnet50',num_classes=num_classes,att_type=att_type,mask_guided=mask_guided)
+model=MGANET(backbone_name=model_name,num_classes=num_classes,att_type=att_type,mask_guided=mask_guided)
 net = model.to(device)
 if device == 'cuda':
     net = torch.nn.DataParallel(net)
     cudnn.benchmark = True
-checkpoint = torch.load('./checkpoint/ckpt.pth')
+checkpoint = torch.load(args.checkpoint_path)
 net.load_state_dict(checkpoint['net'])
 
 criterion = nn.CrossEntropyLoss()

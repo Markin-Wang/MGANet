@@ -33,7 +33,7 @@ test_ce_losses=[]
 train_mse_losses=[]
 test_mse_losses=[]
 
-parser = argparse.ArgumentParser(description='PyTorch CIFAR10 Training')
+parser = argparse.ArgumentParser(description='PyTorch Training')
 parser.add_argument('--lr', default=0.05, type=float, help='learning rate')
 parser.add_argument('--resume', '-r', action='store_true',
                     help='resume from checkpoint')
@@ -42,7 +42,7 @@ parser.add_argument('--max_epoch', default=150,type=int,
 parser.add_argument('--backbone_class', type=str,default='densenet161',choices=['densenet161','vgg19','resnet50',
                                                                                'mobilenet_v2','inception_v3'],
                     help='resume from checkpoint')
-parser.add_argument('--dataset', type=str,default='soybean',choices=['soybean','btf','hainan_leaf'],
+parser.add_argument('--dataset', type=str,default='soybean',choices=['soybean_1_1','soybean_2_1','btf','hainan_leaf'],
                     help='resume from checkpoint')
 parser.add_argument('--data_dir', type=str,default='./data')
 parser.add_argument('--num_classes', default=200, type=int, help='num class')

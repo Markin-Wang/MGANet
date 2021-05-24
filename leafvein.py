@@ -63,12 +63,12 @@ class Leafvein(Dataset):
         file_name = self.img_files[idx]
         id_=(file_name.split('.')[0])
         img = PIL.Image.open(os.path.join(self.data_dir, self.dataset, self.mode,file_name)).convert('RGB')
-        if self.dataset=='soybean':
+        if self.dataset=='btf':
+            mask = PIL.Image.open(os.path.join(self.data_dir,self.dataset,'l2_mask',file_name)) # for btf dataset
+            label=self.label[file_name]-1 # for btf dataset  
+        else:
             mask = PIL.Image.open(os.path.join(self.data_dir,self.dataset,'l2_mask',id_+'.png')) # for soybean and hainan leaf dataset
             label=self.label[int(id_)]-1 # for soybean and hainan leaf dataset
-        else:
-            mask = PIL.Image.open(os.path.join(self.data_dir,self.dataset,'l2_mask',file_name)) # for btf dataset
-            label=self.label[file_name]-1 # for btf dataset
         if self.hflip:
             if random.random() < 0.5:
                 img = img.transpose(PIL.Image.FLIP_LEFT_RIGHT)
