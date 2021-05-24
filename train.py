@@ -58,6 +58,7 @@ start_epoch = 0  # start from epoch 0 or last checkpoint epoch
 # Data
 print('==> Preparing data..')
 
+dataset=args.dataset
 train_dir = os.path.join(args.data_dir,dataset)
 test_dir = os.path.join(args.data_dir,dataset)
 
