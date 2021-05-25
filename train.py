@@ -76,7 +76,7 @@ train = Leafvein(args,crop=[448,448],hflip=True,vflip=False,erase=True,mode='tra
 test = Leafvein(args,mode='test')
 
 trainloader = DataLoader(train, batch_size=batchsize, shuffle=True, num_workers=8)
-testloader = DataLoader(test, batch_size=1, shuffle=False, num_workers=8)
+testloader = DataLoader(test, batch_size=1, shuffle=False, num_workers=4)
 
 
 # Model
@@ -106,8 +106,8 @@ for name, child in model.named_children():
 '''
 
 net = model.to(device)
-#if device[0:4] == 'cuda':
-#    net = torch.nn.DataParallel(net)
+if device == 'cuda':
+    net = torch.nn.DataParallel(net)
 cudnn.benchmark = True
 
 if args.resume:
