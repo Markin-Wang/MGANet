@@ -50,7 +50,7 @@ parser.add_argument('--batch_size', default=32, type=int, help='8 samples for 1 
 
 args = parser.parse_args()
 
-device = 'cuda' if torch.cuda.is_available() else 'cpu'
+device = 'cuda:1' if torch.cuda.is_available() else 'cpu'
 best_acc = 0  # best test accuracy
 best_epoch = 0 # the epoch for the best accuracy
 start_epoch = 0  # start from epoch 0 or last checkpoint epoch
