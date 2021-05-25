@@ -71,7 +71,7 @@ model_name=args.backbone_class
 '''
 
 
-train = Leafvein(args,crop=[224,224],hflip=True,vflip=False,erase=True,mode='train')
+train = Leafvein(args,crop=[448,448],hflip=True,vflip=False,erase=True,mode='train')
 
 test = Leafvein(args,mode='test')
 
