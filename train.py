@@ -106,7 +106,7 @@ for name, child in model.named_children():
 '''
 
 net = model.to(device)
-if device == 'cuda':
+if device[0:4] == 'cuda':
     net = torch.nn.DataParallel(net)
     cudnn.benchmark = True
 
