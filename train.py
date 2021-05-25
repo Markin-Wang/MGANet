@@ -50,7 +50,7 @@ parser.add_argument('--batch_size', default=32, type=int, help='8 samples for 1 
 
 args = parser.parse_args()
 
-device = 'cuda:1' if torch.cuda.is_available() else 'cpu'
+device = 'cuda' if torch.cuda.is_available() else 'cpu'
 best_acc = 0  # best test accuracy
 best_epoch = 0 # the epoch for the best accuracy
 start_epoch = 0  # start from epoch 0 or last checkpoint epoch
@@ -106,9 +106,9 @@ for name, child in model.named_children():
 '''
 
 net = model.to(device)
-if device[0:4] == 'cuda':
-    net = torch.nn.DataParallel(net,device_ids=[1,0])
-    cudnn.benchmark = True
+#if device[0:4] == 'cuda':
+#    net = torch.nn.DataParallel(net)
+cudnn.benchmark = True
 
 if args.resume:
     # Load checkpoint.
