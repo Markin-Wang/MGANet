@@ -65,10 +65,6 @@ num_classes=args.num_classes
 att_type= 'two'
 mask_guided=True
 model_name=args.backbone_class
-'''
-    transforms.Normalize(mean=[0.616, 0.638, 0.589],
-                         std=[0.430, 0.406, 0.461])
-'''
 
 
 train = Leafvein(args,crop=[448,448],hflip=True,vflip=False,erase=True,mode='train')
