@@ -39,10 +39,10 @@ parser.add_argument('--resume', '-r', action='store_true',
                     help='resume from checkpoint')
 parser.add_argument('--max_epoch', default=150,type=int,
                     help='resume from checkpoint')
-parser.add_argument('--backbone_class', type=str,default='densenet161',choices=['densenet161','vgg19','resnet50',
+parser.add_argument('--backbone_class', type=str,default='densenet161',choices=['densenet161','vgg19','resnet50','resnet34',
                                                                                'mobilenet_v2','inception_v3'],
                     help='resume from checkpoint')
-parser.add_argument('--dataset', type=str,default='soybean',choices=['soybean_1_1','soybean_2_1','btf','hainan_leaf'],
+parser.add_argument('--dataset', type=str,default='soybean_2_1',choices=['soybean_1_1','soybean_2_1','btf','hainan_leaf'],
                     help='resume from checkpoint')
 parser.add_argument('--data_dir', type=str,default='./data')
 parser.add_argument('--num_classes', default=200, type=int, help='num class')
@@ -58,7 +58,6 @@ start_epoch = 0  # start from epoch 0 or last checkpoint epoch
 # Data
 print('==> Preparing data..')
 
-dataset=args.dataset
 
 batchsize = args.batch_size
 num_classes=args.num_classes
@@ -104,7 +103,7 @@ for name, child in model.named_children():
 net = model.to(device)
 if device == 'cuda':
     net = torch.nn.DataParallel(net)
-cudnn.benchmark = True
+    cudnn.benchmark = True
 
 if args.resume:
     # Load checkpoint.

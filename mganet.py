@@ -25,7 +25,7 @@ class MGANET(nn.Module):
             self.classifier=nn.Linear(self.features[-1].num_features,num_classes)
         elif backbone_name[:6]=='resnet':
             self.features=getattr(models,backbone_name)(pretrained=True)
-            self.classifier=nn.Linear(2048,num_classes)
+            self.classifier=nn.Linear(512,num_classes)
         elif backbone_name=='mobilenet_v2':
             self.features=getattr(models,backbone_name)(pretrained=True)
             self.classifier=nn.Sequential(
