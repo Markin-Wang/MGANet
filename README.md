@@ -31,7 +31,9 @@ The following packages are required to run the scripts:
 - [Torchvision]
 
 ## Dataset
-The dataset will be released after we complete the code refactoring.
+The dataset can be downloaded from [Goold Drive]().
+soybean_1_1:The soycultivarvein dataset with the training set:test set=1:1. From comparison to the state-of-the-art hand-crafted methods.
+soybean_2_1:The soycultivarvein dataset with the training set:test set=2:1.
 
 
 ## Training scripts for MGANet with the backbone network Densenet161.
@@ -50,7 +52,11 @@ Test the model on the Soybean dataset:
 ## Download  Models
 
 
-[Trained model Google Drive](https://drive.google.com/drive/folders/1ZoG0yOyOaLd3Fgv4ImvNxATeO3pek3VG?usp=sharing)
+[Trained model Google Drive](https://drive.google.com/drive/folders/11SA7PGR9NbyJEaXFOHwA_PGiORdIEoYZ?usp=sharing)
+
+## Segmentation Experiments.
+For the leaf vein segmentation experiments, please refer to [Nvidia/semantic-segmentation](https://github.com/NVIDIA/semantic-segmentation) to gain the details.
+All the three datasets are trained with the crop size (448,448) and 60 epochs.
 
 
 
@@ -59,7 +65,7 @@ Thanks for the advice and guidance given by Dr.Xiaohan Yu and Prof. Yongsheng Ga
 
 Our project references the codes in the following repos.
 - [pytorch-cifar](https://github.com/kuangliu/pytorch-cifar)
-
+- [Nvidia/semantic-segmentation](https://github.com/NVIDIA/semantic-segmentation)
 
 
 
