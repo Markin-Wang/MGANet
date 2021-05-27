@@ -39,13 +39,13 @@ soybean_2_1:The soycultivarvein dataset with the training set:test set=2:1.
 ## Training scripts for MGANet with the backbone network Densenet161.
 Train the model on the Soybean dataset. We run our experiments on 4x2080Ti/4x1080Ti with the batchsize of 32.
 
-    $ python train.py --dataset soybean --lr 0.05 --backbone_class densenet161
+    $ python train.py --dataset soybean_2_1 --lr 0.05 --backbone_class densenet161
 
 
 ## Testing scripts for MGANet with the backbone network Densenet161.
 Test the model on the Soybean dataset:
 
-    $ python test.py  --dataset soybean --backbone_class densenet161
+    $ python test.py  --dataset soybean_2_1 --backbone_class densenet161
     
         
             
