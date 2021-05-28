@@ -33,9 +33,9 @@ The following packages are required to run the scripts:
 ## Dataset
 The dataset can be downloaded from [Goold Drive](https://drive.google.com/drive/folders/1EF_iamMlnb0QYS2xiQRq--fxm7an4tv7?usp=sharing).
 
-soybean_1_1:The soycultivarvein dataset with the training set:test set=1:1. From comparison to the state-of-the-art hand-crafted methods.
+soybean_1_1: The soycultivarvein dataset with the training set:test set=1:1. For comparison to the state-of-the-art hand-crafted methods.
 
-soybean_2_1:The soycultivarvein dataset with the training set:test set=2:1.
+soybean_2_1: The soycultivarvein dataset with the training set:test set=2:1.
 
 
 ## Training scripts for MGANet with the backbone network Densenet161.
