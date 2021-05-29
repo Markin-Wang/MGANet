@@ -2,7 +2,7 @@
 
 PyTorch implementation of 
 
-[MASK GUIDED ATTENTION FOR FINE-GRAINED PATCHY IMAGE CLASSIFICATION](https://https://arxiv.org/pdf/2102.02771.pdf)" ( ICIP 2021 ) 
+[MASK GUIDED ATTENTION FOR FINE-GRAINED PATCHY IMAGE CLASSIFICATION](https://arxiv.org/pdf/2102.02771.pdf)" ( ICIP 2021 ) 
 
 If you use the code in this repo for your work, please cite the following bib entries:
 
@@ -10,7 +10,7 @@ If you use the code in this repo for your work, please cite the following bib en
         title={Mask guided attention for fine-grained patchy image classification},
         author={Wang, Jun and Yu, Xiaohan and Gao, Yongsheng},
         journal={arXiv preprint arXiv:2102.02771},
-        eprint={2003.06777v3},
+        eprint={2102.02771},
         archivePrefix={arXiv},
         primaryClass={cs.CV}
     }
