@@ -6,15 +6,16 @@ PyTorch implementation of
 
 If you use the code in this repo for your work, please cite the following bib entries:
 
-@INPROCEEDINGS{9506424,
-  author={Wang, Jun and Yu, Xiaohan and Gao, Yongsheng},
-  booktitle={2021 IEEE International Conference on Image Processing (ICIP)}, 
-  title={Mask Guided Attention For Fine-Grained Patchy Image Classification}, 
-  year={2021},
-  volume={},
-  number={},
-  pages={1044-1048},
-  doi={10.1109/ICIP42928.2021.9506424}}
+    @INPROCEEDINGS{9506424,
+      author={Wang, Jun and Yu, Xiaohan and Gao, Yongsheng},
+      booktitle={2021 IEEE International Conference on Image Processing (ICIP)}, 
+      title={Mask Guided Attention For Fine-Grained Patchy Image Classification}, 
+      year={2021},
+      volume={},
+      number={},
+      pages={1044-1048},
+      doi={10.1109/ICIP42928.2021.9506424}
+      }
 
 
 ## Abstract
